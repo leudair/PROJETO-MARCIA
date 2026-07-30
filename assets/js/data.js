@@ -108,29 +108,6 @@ const SERVICES = [
   { slug: "personalized-requests", name: "Personalized Requests", short: "Custom combinations of vehicles, yachts, properties and experiences built around a single vision." }
 ];
 
-/* -------------------------------------- Blog ------------------------------------------- */
-const BLOG_CATEGORIES = [
-  "Exotic Cars","Luxury Cars","Miami Guides","Events","Yacht Lifestyle","Luxury Properties",
-  "Travel","Vehicle Spotlights","Long-Term Rentals","VIP Experiences"
-];
-
-const ARTICLES = [
-  { slug: "art-basel-boat-shows-best-events-to-rent-a-luxury-car", title: "Art Basel, Boat Shows & More: Miami's Best Events to Rent a Luxury Car", category: "Events", readTime: "6 min read", date: "2026-01-14" },
-  { slug: "miamis-roaring-beasts-lamborghini-rentals", title: "Miami's Roaring Beasts: Lamborghini Rentals", category: "Vehicle Spotlights", readTime: "5 min read", date: "2026-01-08" },
-  { slug: "south-beach-to-brickell-best-places-to-cruise", title: "From South Beach to Brickell: Best Places to Cruise in a Luxury Car", category: "Miami Guides", readTime: "7 min read", date: "2025-12-29" },
-  { slug: "miami-heat-on-wheels-huracan-spyder-evo", title: "Miami Heat on Wheels: Drive the Lamborghini Huracán Spyder EVO", category: "Vehicle Spotlights", readTime: "5 min read", date: "2025-12-18" },
-  { slug: "timeless-sophistication-rolls-royce-rentals", title: "Timeless Sophistication: Why Rolls-Royce Rentals Define Miami Luxury", category: "Luxury Cars", readTime: "6 min read", date: "2025-12-10" },
-  { slug: "beyond-the-ordinary-porsche-911-turbo", title: "Beyond the Ordinary: Unleashing the Power of the Porsche 911 Turbo", category: "Vehicle Spotlights", readTime: "5 min read", date: "2025-11-30" },
-  { slug: "luxury-in-every-mile-bmw-x7", title: "Luxury in Every Mile: Exploring Miami in the BMW X7 SUV", category: "Luxury Cars", readTime: "4 min read", date: "2025-11-20" },
-  { slug: "long-term-vip-rentals-above-the-ordinary", title: "Long-Term & VIP Rentals for Those Who Live Above the Ordinary", category: "Long-Term Rentals", readTime: "6 min read", date: "2025-11-08" },
-  { slug: "airport-to-ocean-drive-seamless-experiences", title: "Airport to Ocean Drive: Seamless Luxury Car Rental Experiences in Miami", category: "VIP Experiences", readTime: "5 min read", date: "2025-10-27" },
-  { slug: "make-miami-pause-every-time-you-arrive", title: "Make Miami Pause Every Time You Arrive", category: "Miami Guides", readTime: "4 min read", date: "2025-10-15" },
-  { slug: "miami-nightlife-in-style", title: "Miami Nightlife in Style: How a Luxury Car Elevates Every Evening", category: "Travel", readTime: "5 min read", date: "2025-10-02" },
-  { slug: "ferrari-488-spider-open-top-thrills", title: "Ferrari 488 Spider in Miami: Open-Top Thrills in the Magic City", category: "Vehicle Spotlights", readTime: "5 min read", date: "2025-09-21" },
-  { slug: "future-of-supercars-lamborghini-revuelto", title: "The Future of Supercars Has Arrived: Renting the Lamborghini Revuelto in South Florida", category: "Exotic Cars", readTime: "6 min read", date: "2025-09-09" },
-  { slug: "best-luxury-cars-for-brickell-wynwood", title: "The Best Luxury Cars for Brickell & Wynwood", category: "Miami Guides", readTime: "5 min read", date: "2025-08-28" }
-];
-
 /* -------------------------------------- FAQs ------------------------------------------- */
 const FAQS = {
   "Car Rental": [

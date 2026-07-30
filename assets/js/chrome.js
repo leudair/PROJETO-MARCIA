@@ -30,7 +30,6 @@
             <div class="mega-menu-col">
               <a href="${BASE}about.html">About</a>
               <a href="${BASE}partners.html">Partners</a>
-              <a href="${BASE}blog.html">Blog</a>
               <a href="${BASE}faq.html">FAQ</a>
               <a href="${BASE}contact.html">Contact</a>
               <a href="${BASE}terms-and-conditions.html">Terms and Conditions</a>
@@ -54,7 +53,7 @@
   function mobileMenuHTML() {
     const infoLinks = [
       { label: "About", href: BASE + "about.html" }, { label: "Partners", href: BASE + "partners.html" },
-      { label: "Blog", href: BASE + "blog.html" }, { label: "FAQ", href: BASE + "faq.html" },
+      { label: "FAQ", href: BASE + "faq.html" },
       { label: "Contact", href: BASE + "contact.html" }, { label: "Terms and Conditions", href: BASE + "terms-and-conditions.html" },
       { label: "Privacy Policy", href: BASE + "privacy-policy.html" }
     ];
@@ -107,7 +106,6 @@
         <a href="${BASE}yachts.html">Yachts</a>
         <a href="${BASE}partners.html">Partners</a>
         <a href="${BASE}services.html">Services</a>
-        <a href="${BASE}blog.html">Blog</a>
         <a href="${BASE}contact.html">Contact</a>
       </div>
       <div class="footer-col">

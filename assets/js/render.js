@@ -109,23 +109,6 @@
     );
   }
 
-  /* ------------------------------------- Article card ----------------------------------------- */
-  function articleCard(a) {
-    const href = BASE + "blog/" + a.slug + ".html";
-    const dateStr = new Date(a.date + "T00:00:00").toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
-    return (
-      '<article class="card article-card">' +
-      '<div class="card-media"><a href="' + href + '" aria-hidden="true" tabindex="-1">' + placeholderMedia(a.category, "4-3") + "</a></div>" +
-      '<div class="card-body">' +
-      '<div class="article-meta"><span>' + a.category + "</span><span>" + a.readTime + "</span></div>" +
-      '<h3 class="card-title"><a href="' + href + '">' + a.title + "</a></h3>" +
-      '<div class="card-footer" style="border-top:none;padding-top:0;">' +
-      '<span class="text-dim" style="font-size:var(--fs-caption)">' + dateStr + "</span>" +
-      '<a class="btn-text" href="' + href + '">Read Article</a>' +
-      "</div></div></article>"
-    );
-  }
-
   /* ------------------------------------- Location chips ------------------------------------- */
   function locationChips(list) {
     return list.map((l) => '<span class="location-chip">' + icon("pin") + l.name + "</span>").join("");
@@ -161,10 +144,8 @@
       mount("featured-fleet-grid", VEHICLES.filter((v) => v.featured).map(vehicleCard).join(""));
     }
 
-    /* Home — beyond the drive locations, articles, faq preview */
+    /* Home — beyond the drive locations, faq preview */
     mount("home-locations", locationChips(LOCATIONS));
-    const homeArticles = document.getElementById("home-articles-grid");
-    if (homeArticles) mount("home-articles-grid", ARTICLES.slice(0, 3).map(articleCard).join(""));
     const homeYachts = document.getElementById("home-yacht-grid");
     if (homeYachts) mount("home-yacht-grid", YACHTS.slice(0, 3).map(yachtCard).join(""));
     const homeProperties = document.getElementById("home-property-grid");
@@ -255,19 +236,6 @@
     const serviceGrid = document.getElementById("service-grid");
     if (serviceGrid) mount("service-grid", SERVICES.map(serviceCard).join(""));
 
-    /* Blog listing page */
-    const blogGrid = document.getElementById("blog-grid");
-    if (blogGrid) {
-      const renderBlog = (filterCategory) => {
-        const list = !filterCategory || filterCategory === "all" ? ARTICLES : ARTICLES.filter((a) => a.category === filterCategory);
-        blogGrid.innerHTML = list.map(articleCard).join("");
-      };
-      renderBlog("all");
-      document.addEventListener("amani:filter-change", (e) => {
-        if (e.detail.group === "blog-category") renderBlog(e.detail.value);
-      });
-    }
-
     /* Related grids on detail pages */
     document.querySelectorAll("[data-related-vehicles]").forEach((el) => {
       const excludeSlug = el.getAttribute("data-exclude");
@@ -280,10 +248,6 @@
     document.querySelectorAll("[data-related-properties]").forEach((el) => {
       const excludeSlug = el.getAttribute("data-exclude");
       el.innerHTML = PROPERTIES.filter((p) => p.slug !== excludeSlug).slice(0, 3).map(propertyCard).join("");
-    });
-    document.querySelectorAll("[data-related-articles]").forEach((el) => {
-      const excludeSlug = el.getAttribute("data-exclude");
-      el.innerHTML = ARTICLES.filter((a) => a.slug !== excludeSlug).slice(0, 3).map(articleCard).join("");
     });
     document.querySelectorAll("[data-related-services]").forEach((el) => {
       const excludeSlug = el.getAttribute("data-exclude");
@@ -301,7 +265,7 @@
       rebindFaq();
     }
 
-    /* Filter chip groups: category filter on cars.html, blog.html */
+    /* Filter chip groups: category filter on cars.html */
     document.querySelectorAll("[data-filter-group]").forEach((group) => {
       const first = group.querySelector(".filter-chip");
       if (first) first.classList.add("is-active");
@@ -345,5 +309,5 @@
   }
 
   window.amaniPlaceholderMedia = placeholderMedia;
-  window.amaniCards = { vehicleCard, yachtCard, propertyCard, serviceCard, articleCard, faqList, locationChips };
+  window.amaniCards = { vehicleCard, yachtCard, propertyCard, serviceCard, faqList, locationChips };
 })();

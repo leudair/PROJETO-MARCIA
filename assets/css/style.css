@@ -421,10 +421,6 @@ p { color: var(--text-muted); }
 .card-price { font-family: var(--font-display); font-size: 1.05rem; color: var(--white-pure); }
 .card-price small { display: block; font-family: var(--font-body); font-size: var(--fs-caption); color: var(--text-dim); font-weight: 400; }
 
-/* Blog / article card */
-.article-card .card-body { gap: 0.4em; }
-.article-meta { display: flex; gap: 1em; font-size: var(--fs-caption); color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; }
-
 /* -------------------------- Fleet / service list rows -------------------------- */
 #fleet-grid, #service-grid, [data-related-vehicles], [data-related-services] {
   display: flex; flex-direction: column; gap: 0;
