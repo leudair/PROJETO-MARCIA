@@ -303,6 +303,8 @@ p { color: var(--text-muted); }
   padding: var(--space-2) 0; font-size: 1.15rem; font-family: var(--font-display); border-bottom: 1px solid var(--hairline);
   background: none; border-left: none; border-right: none; border-top: none; color: var(--white-pure);
 }
+.mobile-accordion-trigger svg { width: 12px; height: 12px; flex-shrink: 0; transition: transform 0.3s var(--ease); }
+.mobile-accordion-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
 .mobile-submenu { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease); }
 .mobile-submenu.is-open { max-height: 600px; }
 .mobile-submenu a { font-size: var(--fs-body); font-family: var(--font-body); padding-left: var(--space-2); color: var(--text-muted); border-bottom: none; }

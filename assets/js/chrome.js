@@ -92,9 +92,7 @@
 
   function mobileMenuHTML() {
     const groups = [
-      { key: "cars", label: "Cars", href: BASE + "cars.html", items: topBrands.map((b) => ({ label: b, href: BASE + "cars.html?brand=" + encodeURIComponent(b) })) },
-      { key: "services", label: "Services", href: BASE + "services.html", items: SERVICES.map((s) => ({ label: s.name, href: BASE + "services/" + s.slug + ".html" })) },
-      { key: "info", label: "Info", href: null, items: [
+      { key: "info", label: "Info", items: [
         { label: "About", href: BASE + "about.html" }, { label: "Partners", href: BASE + "partners.html" },
         { label: "Blog", href: BASE + "blog.html" }, { label: "FAQ", href: BASE + "faq.html" },
         { label: "Contact", href: BASE + "contact.html" }, { label: "Terms and Conditions", href: BASE + "terms-and-conditions.html" },
@@ -108,14 +106,15 @@
     <button class="btn-icon mobile-menu-close" aria-label="Close menu">${icon("close")}</button>
   </div>
   <nav>
+    <a href="${BASE}cars.html">Cars</a>
+    <a href="${BASE}services.html">Services</a>
+    <a href="${BASE}yachts.html">Yachts</a>
+    <a href="${BASE}properties.html">Properties</a>
     ${groups.map((g, i) => `
     <button class="mobile-accordion-trigger" aria-expanded="false" aria-controls="mm-sub-${i}">${g.label} ${icon("chevronDown")}</button>
     <div class="mobile-submenu" id="mm-sub-${i}">
-      ${g.href ? `<a href="${g.href}">View All ${g.label}</a>` : ""}
       ${g.items.map((it) => `<a href="${it.href}">${it.label}</a>`).join("")}
     </div>`).join("")}
-    <a href="${BASE}yachts.html">Yachts</a>
-    <a href="${BASE}properties.html">Properties</a>
   </nav>
   <div class="mobile-menu-actions">
     <a class="btn btn-gold btn-block" href="${SITE.phoneHref}">${icon("phone")} Call ${SITE.phone}</a>
