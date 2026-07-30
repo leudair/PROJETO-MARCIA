@@ -22,28 +22,23 @@
     return '<div class="card-price">Request<small>Pricing</small></div>';
   }
 
-  /* ------------------------------------ Vehicle card --------------------------------------- */
+  /* ------------------------------------ Vehicle row ----------------------------------------- */
   function vehicleCard(v) {
     const href = BASE + "cars/" + v.slug + ".html";
     return (
-      '<article class="card vehicle-card">' +
-      '<div class="card-media">' +
-      (v.badge ? '<span class="card-badge">' + v.badge + "</span>" : "") +
-      '<button class="card-fav" data-fav-id="vehicle-' + v.slug + '" aria-pressed="false" aria-label="Save ' + v.brand + " " + v.model + ' to favorites">' + icon("heart") + "</button>" +
-      '<a href="' + href + '" aria-hidden="true" tabindex="-1">' + placeholderMedia(v.brand + " " + v.model, "4-3") + "</a>" +
-      "</div>" +
-      '<div class="card-body">' +
-      '<span class="card-eyebrow">' + v.category + "</span>" +
-      '<h3 class="card-title"><a href="' + href + '">' + v.brand + " " + v.model + "</a></h3>" +
-      '<div class="card-meta">' +
-      '<span>' + icon("seat") + v.seats + " seats</span>" +
-      '<span>' + icon("door") + v.doors + " doors</span>" +
-      '<span>' + icon("gear") + v.transmission + "</span>" +
-      "</div>" +
-      '<div class="card-footer">' +
-      priceBlock(v.price) +
-      '<div class="card-actions"><a class="btn btn-outline" href="' + href + '">Details</a><a class="btn btn-gold" href="' + href + '#reserve">Reserve</a></div>' +
-      "</div></div></article>"
+      '<a class="fleet-row" href="' + href + '">' +
+      '<div class="fleet-row-info">' +
+      '<span class="fleet-row-eyebrow">' + v.category + (v.badge ? " · " + v.badge : "") + "</span>" +
+      '<h3 class="fleet-row-title">' + v.brand + " " + v.model + "</h3>" +
+      '<div class="fleet-row-meta">' +
+      "<span>" + v.seats + " seats</span>" +
+      "<span>" + v.doors + " doors</span>" +
+      "<span>" + v.transmission + "</span>" +
+      "</div></div>" +
+      '<div class="fleet-row-cta">' +
+      '<span class="fleet-row-price">' + (v.price ? "$" + v.price + "/day" : "Request Pricing") + "</span>" +
+      icon("chevronRight") +
+      "</div></a>"
     );
   }
 
@@ -97,19 +92,16 @@
     );
   }
 
-  /* ------------------------------------ Service card ----------------------------------------- */
+  /* ------------------------------------ Service row ----------------------------------------- */
   function serviceCard(s) {
     const href = BASE + "services/" + s.slug + ".html";
     return (
-      '<article class="card service-card">' +
-      '<div class="card-media"><a href="' + href + '" aria-hidden="true" tabindex="-1">' + placeholderMedia(s.name, "4-3") + "</a></div>" +
-      '<div class="card-body">' +
-      '<h3 class="card-title"><a href="' + href + '">' + s.name + "</a></h3>" +
-      "<p>" + s.short + "</p>" +
-      '<div class="card-footer" style="border-top:none;padding-top:0;">' +
-      '<a class="btn-text" href="' + href + '">Learn More</a>' +
-      '<a class="btn btn-outline" href="' + href + '#inquire">Request</a>' +
-      "</div></div></article>"
+      '<a class="fleet-row" href="' + href + '">' +
+      '<div class="fleet-row-info">' +
+      '<h3 class="fleet-row-title">' + s.name + "</h3>" +
+      '<p class="fleet-row-desc">' + s.short + "</p>" +
+      "</div>" +
+      '<div class="fleet-row-cta">' + icon("chevronRight") + "</div></a>"
     );
   }
 
