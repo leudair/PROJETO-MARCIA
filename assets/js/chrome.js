@@ -11,10 +11,6 @@
   const icon = window.amaniIcon;
   const page = document.body.getAttribute("data-page") || "";
 
-  const topServices = SERVICES.slice(0, 6);
-  const topBrands = VEHICLE_BRANDS.slice(0, 6);
-  const topCategories = ["Supercars", "Luxury SUVs", "Ultra-Luxury Sedans", "Exotic Convertibles", "Sports Cars", "Long-Term Rental Vehicles"];
-
   function headerHTML() {
     return `
 <a href="${BASE}index.html" class="skip-link">Skip to content</a>
@@ -24,43 +20,8 @@
 
     <nav class="main-nav" aria-label="Primary">
       <ul>
-        <li class="nav-item">
-          <button class="nav-link" type="button" aria-expanded="false" aria-haspopup="true" data-nav-key="cars">Cars ${icon("chevronDown")}</button>
-          <div class="mega-menu" role="menu">
-            <div class="mega-menu-col">
-              <h5>Brands</h5>
-              ${topBrands.map((b) => `<a href="${BASE}cars.html?brand=${encodeURIComponent(b)}">${b}</a>`).join("")}
-            </div>
-            <div class="mega-menu-col">
-              <h5>Categories</h5>
-              ${topCategories.map((c) => `<a href="${BASE}cars.html?category=${encodeURIComponent(c)}">${c}</a>`).join("")}
-            </div>
-            <div class="mega-menu-col">
-              <h5>Fleet</h5>
-              <a href="${BASE}cars.html">View Full Fleet</a>
-              <a href="${BASE}vehicle-partners.html">Vehicle Partner Program</a>
-              <a href="${BASE}personalized-requests.html">Personalized Requests</a>
-            </div>
-          </div>
-        </li>
-        <li class="nav-item">
-          <button class="nav-link" type="button" aria-expanded="false" aria-haspopup="true" data-nav-key="services">Services ${icon("chevronDown")}</button>
-          <div class="mega-menu" role="menu">
-            <div class="mega-menu-col">
-              <h5>Popular Services</h5>
-              ${topServices.slice(0, 3).map((s) => `<a href="${BASE}services/${s.slug}.html">${s.name}</a>`).join("")}
-            </div>
-            <div class="mega-menu-col">
-              <h5>&nbsp;</h5>
-              ${topServices.slice(3, 6).map((s) => `<a href="${BASE}services/${s.slug}.html">${s.name}</a>`).join("")}
-            </div>
-            <div class="mega-menu-col">
-              <h5>Explore</h5>
-              <a href="${BASE}services.html">All Services</a>
-              <a href="${BASE}personalized-requests.html">Exclusive Inquiries</a>
-            </div>
-          </div>
-        </li>
+        <li><a class="nav-link" data-nav-key="cars" href="${BASE}cars.html">Cars</a></li>
+        <li><a class="nav-link" data-nav-key="services" href="${BASE}services.html">Services</a></li>
         <li><a class="nav-link" data-nav-key="yachts" href="${BASE}yachts.html">Yachts</a></li>
         <li><a class="nav-link" data-nav-key="properties" href="${BASE}properties.html">Properties</a></li>
         <li class="nav-item">
@@ -91,13 +52,11 @@
   }
 
   function mobileMenuHTML() {
-    const groups = [
-      { key: "info", label: "Info", items: [
-        { label: "About", href: BASE + "about.html" }, { label: "Partners", href: BASE + "partners.html" },
-        { label: "Blog", href: BASE + "blog.html" }, { label: "FAQ", href: BASE + "faq.html" },
-        { label: "Contact", href: BASE + "contact.html" }, { label: "Terms and Conditions", href: BASE + "terms-and-conditions.html" },
-        { label: "Privacy Policy", href: BASE + "privacy-policy.html" }
-      ]}
+    const infoLinks = [
+      { label: "About", href: BASE + "about.html" }, { label: "Partners", href: BASE + "partners.html" },
+      { label: "Blog", href: BASE + "blog.html" }, { label: "FAQ", href: BASE + "faq.html" },
+      { label: "Contact", href: BASE + "contact.html" }, { label: "Terms and Conditions", href: BASE + "terms-and-conditions.html" },
+      { label: "Privacy Policy", href: BASE + "privacy-policy.html" }
     ];
     return `
 <div class="mobile-menu" id="mobile-menu">
@@ -110,11 +69,7 @@
     <a href="${BASE}services.html">Services</a>
     <a href="${BASE}yachts.html">Yachts</a>
     <a href="${BASE}properties.html">Properties</a>
-    ${groups.map((g, i) => `
-    <button class="mobile-accordion-trigger" aria-expanded="false" aria-controls="mm-sub-${i}">${g.label} ${icon("chevronDown")}</button>
-    <div class="mobile-submenu" id="mm-sub-${i}">
-      ${g.items.map((it) => `<a href="${it.href}">${it.label}</a>`).join("")}
-    </div>`).join("")}
+    ${infoLinks.map((it) => `<a href="${it.href}">${it.label}</a>`).join("")}
   </nav>
   <div class="mobile-menu-actions">
     <a class="btn btn-gold btn-block" href="${SITE.phoneHref}">${icon("phone")} Call ${SITE.phone}</a>

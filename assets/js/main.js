@@ -105,14 +105,6 @@
     });
   }
 
-  document.querySelectorAll(".mobile-accordion-trigger").forEach((trigger) => {
-    trigger.addEventListener("click", () => {
-      const submenu = document.getElementById(trigger.getAttribute("aria-controls"));
-      const isOpen = submenu.classList.toggle("is-open");
-      trigger.setAttribute("aria-expanded", String(isOpen));
-    });
-  });
-
   /* -------------------------------------- FAQ accordion -------------------------------- */
   document.querySelectorAll(".faq-question").forEach((btn) => {
     btn.addEventListener("click", () => {
