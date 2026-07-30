@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxury & Exotic Car Rentals in Miami | Amani Miami</title>
+<meta name="description" content="Browse Amani Miami's premium fleet of supercars, luxury SUVs, convertibles and refined sedans. Request availability for your South Florida experience.">
+<link rel="canonical" href="https://amanimiami.com/cars">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="cars">
+<div id="site-header-mount"></div>
+
+<main id="main-content">
+  <nav class="breadcrumbs container container--wide" aria-label="Breadcrumb">
+    <ol><li><a href="index.html">Home</a></li><li>Cars</li></ol>
+  </nav>
+
+  <section class="page-hero hero" style="min-height:46vh;padding-top:calc(var(--space-6) + var(--space-3));background:radial-gradient(120% 90% at 50% 0%, #1a1a1d 0%, var(--black) 62%);">
+    <div class="container container--wide hero-content" data-reveal>
+      <span class="eyebrow">The Fleet</span>
+      <h1 class="h1 mt-2">Luxury &amp; Exotic Car Rentals in Miami</h1>
+      <p class="body-lg mt-3">Explore a curated fleet of supercars, exotic convertibles, luxury SUVs and refined sedans, prepared for unforgettable South Florida experiences.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#fleet">View Available Vehicles</a>
+        <a class="btn btn-outline" href="personalized-requests.html">Request a Recommendation</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="fleet" style="padding-top:var(--space-5)">
+    <div class="container container--wide">
+
+      <div class="filter-chip-group" data-filter-group="vehicle-category" role="tablist" aria-label="Filter by category">
+        <button class="filter-chip is-active" data-value="all">All</button>
+        <button class="filter-chip" data-value="Supercars">Supercars</button>
+        <button class="filter-chip" data-value="Exotic Convertibles">Exotic Convertibles</button>
+        <button class="filter-chip" data-value="Exotic Coupes">Exotic Coupes</button>
+        <button class="filter-chip" data-value="Luxury Sedans">Luxury Sedans</button>
+        <button class="filter-chip" data-value="Ultra-Luxury Sedans">Ultra-Luxury Sedans</button>
+        <button class="filter-chip" data-value="Luxury SUVs">Luxury SUVs</button>
+        <button class="filter-chip" data-value="Performance SUVs">Performance SUVs</button>
+        <button class="filter-chip" data-value="Sports Cars">Sports Cars</button>
+      </div>
+
+      <div class="filter-bar">
+        <label class="visually-hidden" for="filter-brand">Filter by brand</label>
+        <select id="filter-brand" aria-label="Filter by brand">
+          <option value="">All Brands</option>
+        </select>
+        <label class="visually-hidden" for="filter-sort">Sort</label>
+        <select id="filter-sort" aria-label="Sort vehicles">
+          <option value="featured">Sort: Featured</option>
+          <option value="newest">Sort: Newest</option>
+        </select>
+        <button class="btn-text" id="fleet-clear-filters" type="button">Clear All Filters</button>
+      </div>
+
+      <div class="results-row">
+        <span id="fleet-result-count">Loading vehicles…</span>
+      </div>
+
+      <div class="grid grid-4" id="fleet-grid" aria-live="polite"></div>
+
+      <div class="empty-state" id="fleet-empty-state" hidden>
+        <h3 class="h3">We could not find an exact match for those filters.</h3>
+        <p>Contact our team and we will help source the right vehicle for your South Florida experience.</p>
+        <a class="btn btn-gold" href="personalized-requests.html">Request a Recommendation</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="split" data-reveal-group>
+        <div>
+          <span class="eyebrow">South Florida Fleet</span>
+          <h2 class="h2 mt-2">A Fleet Built for Every South Florida Occasion</h2>
+          <p class="body-lg mt-3">From a Lamborghini Huracán for a South Beach evening to a Rolls-Royce Cullinan for a Brickell arrival, the Amani Miami fleet is privately owned, meticulously maintained and available with personalized delivery across Miami Beach, Fort Lauderdale, Boca Raton and beyond.</p>
+          <p class="mt-3">Every reservation includes access to our concierge team, who will confirm current availability, requirements and pricing before delivery.</p>
+        </div>
+        <div>
+          <div class="grid" style="grid-template-columns:1fr 1fr;gap:var(--space-2)">
+            <div class="stat-block" style="border-left:none;padding:var(--space-3)"><div class="stat-number">17+</div><div class="stat-label">Represented Brands</div></div>
+            <div class="stat-block" style="border-left:none;padding:var(--space-3)"><div class="stat-number">11</div><div class="stat-label">Service Areas</div></div>
+            <div class="stat-block" style="border-left:none;padding:var(--space-3)"><div class="stat-number">5.0</div><div class="stat-label">Google Rating</div></div>
+            <div class="stat-block" style="border-left:none;padding:var(--space-3)"><div class="stat-number">24/7</div><div class="stat-label">Concierge Support</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container" data-reveal>
+      <span class="eyebrow" style="justify-content:center">Not Sure Where to Start</span>
+      <h2 class="h2 mt-2">Let Our Concierge Team Recommend the Right Vehicle</h2>
+      <div class="btn-row">
+        <a class="btn btn-gold" href="personalized-requests.html">Request a Recommendation</a>
+        <a class="btn btn-outline" href="tel:+13059908111">Call (305) 990-8111</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer-mount"></div>
+
+<script>window.BASE_PATH = "";</script>
+<script src="assets/js/icons.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/chrome.js"></script>
+<script src="assets/js/render.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
