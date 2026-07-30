@@ -22,11 +22,15 @@
     return '<div class="card-price">Request<small>Pricing</small></div>';
   }
 
+  function waLink(message) {
+    return SITE.whatsappHref + "?text=" + encodeURIComponent(message);
+  }
+
   /* ------------------------------------ Vehicle row ----------------------------------------- */
   function vehicleCard(v) {
-    const href = BASE + "cars/" + v.slug + ".html";
+    const href = waLink("Hi, I'm interested in the " + v.brand + " " + v.model + ". Could you share availability and pricing?");
     return (
-      '<a class="fleet-row" href="' + href + '">' +
+      '<a class="fleet-row" href="' + href + '" target="_blank" rel="noopener">' +
       '<div class="fleet-row-info">' +
       '<span class="fleet-row-eyebrow">' + v.category + (v.badge ? " · " + v.badge : "") + "</span>" +
       '<h3 class="fleet-row-title">' + v.brand + " " + v.model + "</h3>" +
@@ -37,24 +41,24 @@
       "</div></div>" +
       '<div class="fleet-row-cta">' +
       '<span class="fleet-row-price">' + (v.price ? "$" + v.price + "/day" : "Request Pricing") + "</span>" +
-      icon("chevronRight") +
+      icon("whatsapp") +
       "</div></a>"
     );
   }
 
   /* ------------------------------------- Yacht card ----------------------------------------- */
   function yachtCard(y) {
-    const href = BASE + "yachts/" + y.slug + ".html";
+    const href = waLink("Hi, I'm interested in the " + y.name + " yacht. Could you share availability and pricing?");
     return (
       '<article class="card yacht-card">' +
       '<div class="card-media">' +
       (y.badge ? '<span class="card-badge">' + y.badge + "</span>" : "") +
       '<button class="card-fav" data-fav-id="yacht-' + y.slug + '" aria-pressed="false" aria-label="Save ' + y.name + ' to favorites">' + icon("heart") + "</button>" +
-      '<a href="' + href + '" aria-hidden="true" tabindex="-1">' + placeholderMedia(y.name, "4-3") + "</a>" +
+      '<a href="' + href + '" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">' + placeholderMedia(y.name, "4-3") + "</a>" +
       "</div>" +
       '<div class="card-body">' +
       '<span class="card-eyebrow">' + y.category + "</span>" +
-      '<h3 class="card-title"><a href="' + href + '">' + y.name + "</a></h3>" +
+      '<h3 class="card-title"><a href="' + href + '" target="_blank" rel="noopener">' + y.name + "</a></h3>" +
       '<div class="card-meta">' +
       '<span>' + icon("anchor") + y.length + "</span>" +
       '<span>' + icon("users") + y.guests + " guests</span>" +
@@ -62,24 +66,24 @@
       "</div>" +
       '<div class="card-footer">' +
       priceBlock(y.price, "starting") +
-      '<div class="card-actions"><a class="btn btn-outline" href="' + href + '">Details</a><a class="btn btn-gold" href="' + href + '#inquire">Inquire</a></div>' +
+      '<a class="btn btn-gold" href="' + href + '" target="_blank" rel="noopener">' + icon("whatsapp") + " Inquire</a>" +
       "</div></div></article>"
     );
   }
 
   /* ----------------------------------- Property card ---------------------------------------- */
   function propertyCard(p) {
-    const href = BASE + "properties/" + p.slug + ".html";
+    const href = waLink("Hi, I'm interested in the " + p.name + ". Could you share availability and pricing?");
     return (
       '<article class="card property-card">' +
       '<div class="card-media">' +
       (p.badge ? '<span class="card-badge">' + p.badge + "</span>" : "") +
       '<button class="card-fav" data-fav-id="property-' + p.slug + '" aria-pressed="false" aria-label="Save ' + p.name + ' to favorites">' + icon("heart") + "</button>" +
-      '<a href="' + href + '" aria-hidden="true" tabindex="-1">' + placeholderMedia(p.name, "4-3") + "</a>" +
+      '<a href="' + href + '" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">' + placeholderMedia(p.name, "4-3") + "</a>" +
       "</div>" +
       '<div class="card-body">' +
       '<span class="card-eyebrow">' + p.category + " · " + p.area + "</span>" +
-      '<h3 class="card-title"><a href="' + href + '">' + p.name + "</a></h3>" +
+      '<h3 class="card-title"><a href="' + href + '" target="_blank" rel="noopener">' + p.name + "</a></h3>" +
       '<div class="card-meta">' +
       '<span>' + icon("bed") + p.bedrooms + " bed</span>" +
       '<span>' + icon("bath") + p.bathrooms + " bath</span>" +
@@ -87,21 +91,21 @@
       "</div>" +
       '<div class="card-footer">' +
       priceBlock(p.price, "per night") +
-      '<div class="card-actions"><a class="btn btn-outline" href="' + href + '">Details</a><a class="btn btn-gold" href="' + href + '#inquire">Inquire</a></div>' +
+      '<a class="btn btn-gold" href="' + href + '" target="_blank" rel="noopener">' + icon("whatsapp") + " Inquire</a>" +
       "</div></div></article>"
     );
   }
 
   /* ------------------------------------ Service row ----------------------------------------- */
   function serviceCard(s) {
-    const href = BASE + "services/" + s.slug + ".html";
+    const href = waLink("Hi, I'm interested in " + s.name + ". Could you share more details?");
     return (
-      '<a class="fleet-row" href="' + href + '">' +
+      '<a class="fleet-row" href="' + href + '" target="_blank" rel="noopener">' +
       '<div class="fleet-row-info">' +
       '<h3 class="fleet-row-title">' + s.name + "</h3>" +
       '<p class="fleet-row-desc">' + s.short + "</p>" +
       "</div>" +
-      '<div class="fleet-row-cta">' + icon("chevronRight") + "</div></a>"
+      '<div class="fleet-row-cta">' + icon("whatsapp") + "</div></a>"
     );
   }
 
