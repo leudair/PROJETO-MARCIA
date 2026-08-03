@@ -135,7 +135,7 @@ were removed — this scaffold's original form markup is in git history.
 consistent site-wide via the shared design system. ✅ Logo mark is a generic
 placeholder sparkle icon — swap for the real logo file. ⚠
 
-**Contact** — (305) 990-8111, info@amanimiami.com, and
+**Contact** — (267) 205-9738, info@amanimiami.com, and
 instagram.com/luxury2008 are correct and driven from one place
 (`SITE` object in `data.js`) so they can't drift between pages. ✅
 

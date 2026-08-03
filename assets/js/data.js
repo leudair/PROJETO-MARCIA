@@ -10,9 +10,9 @@
 const SITE = {
   name: "Amani Miami",
   domain: "amanimiami.com",
-  phone: "(305) 990-8111",
-  phoneHref: "tel:+13059908111",
-  whatsappHref: "https://wa.me/13059908111",
+  phone: "(267) 205-9738",
+  phoneHref: "tel:+12672059738",
+  whatsappHref: "https://wa.me/12672059738",
   email: "info@amanimiami.com",
   instagramHandle: "@luxury2008",
   instagramUrl: "https://www.instagram.com/luxury2008/",
@@ -154,7 +154,7 @@ const FAQS = {
     { q: "Can I combine cars, yachts and properties into one request?", a: "Yes. Visit our Personalized Requests page to describe your vision, and our concierge team will help coordinate it." },
     { q: "Do you work with corporate clients?", a: "Yes. We support executive arrivals, client hospitality, conferences and brand activations. Contact our team to discuss your needs." },
     { q: "How can I become a partner?", a: "Visit our Partners page to submit your company for consideration." },
-    { q: "What is the best way to reach the team quickly?", a: "Call (305) 990-8111 or send a WhatsApp message for the fastest response." }
+    { q: "What is the best way to reach the team quickly?", a: "Call (267) 205-9738 or send a WhatsApp message for the fastest response." }
   ]
 };
 
